@@ -9,34 +9,50 @@ Each skill is a `.md` file that gets loaded into Claude Code as a `/command`, en
 ## Prerequisites
 
 - [Claude Code](https://claude.ai/claude-code) installed and running
-- macOS or Linux (install script uses bash)
+- macOS, Linux, or Windows (PowerShell)
 
 ---
 
 ## Installation
 
-### Install all skills at once
+### macOS / Linux
 
 ```bash
 git clone https://github.com/Ashuqwe/claude-skills.git
 cd claude-skills
 chmod +x install.sh
+
+# Install all skills
 ./install.sh all
-```
 
-### Install a specific skill
-
-```bash
+# Or install a specific skill
 ./install.sh feature-story
 ```
 
-### Install manually (no script)
+### Windows (PowerShell)
 
-Copy the `.md` files from any skill folder into `~/.claude/commands/`:
+```powershell
+git clone https://github.com/Ashuqwe/claude-skills.git
+cd claude-skills
 
-```bash
-cp skills/feature-story/*.md ~/.claude/commands/
+# Install all skills
+.\install.ps1 all
+
+# Or install a specific skill
+.\install.ps1 feature-story
 ```
+
+> If you get a script execution error, run this first:
+> `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+
+### Manual install (any platform)
+
+Copy all `.md` files (except `README.md`) from the skill folder into your Claude commands directory:
+
+| Platform | Claude commands directory |
+|---|---|
+| macOS / Linux | `~/.claude/commands/` |
+| Windows | `%USERPROFILE%\.claude\commands\` |
 
 Restart Claude Code after installing. Skills are available as `/skill-name`.
 
@@ -63,7 +79,8 @@ Built for Product Managers who want to turn messy notes and data into polished, 
 ```
 claude-skills/
 ├── README.md               # This file
-├── install.sh              # One-command installer
+├── install.sh              # Installer for macOS / Linux
+├── install.ps1             # Installer for Windows (PowerShell)
 └── skills/
     └── feature-story/
         ├── README.md           # Skill documentation
@@ -79,7 +96,7 @@ claude-skills/
 1. Create a folder under `skills/your-skill-name/`
 2. Add your skill as `your-skill-name.md` (this becomes the `/command`)
 3. Add a `README.md` documenting how the skill works
-4. Update `install.sh` if your skill has supporting files
+4. Update both `install.sh` and `install.ps1` if your skill has supporting files
 5. Add an entry to the Available Skills section above
 
 ---

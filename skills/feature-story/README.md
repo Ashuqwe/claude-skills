@@ -20,13 +20,24 @@ Given a raw feature description, data points, or experiment notes, this skill pr
 
 ## Installation
 
+**macOS / Linux**
 ```bash
-# From the root of this repo
 ./install.sh feature-story
-
-# Or manually
-cp skills/feature-story/*.md ~/.claude/commands/
 ```
+
+**Windows (PowerShell)**
+```powershell
+.\install.ps1 feature-story
+```
+
+**Manual (any platform)**
+
+Copy all `.md` files except `README.md` into your Claude commands directory:
+
+| Platform | Path |
+|---|---|
+| macOS / Linux | `~/.claude/commands/` |
+| Windows | `%USERPROFILE%\.claude\commands\` |
 
 Restart Claude Code after installing.
 
