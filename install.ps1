@@ -35,10 +35,17 @@ function Install-Skill {
         New-Item -ItemType Directory -Path $TargetDir -Force | Out-Null
     }
 
-    # Copy all .md files except the skill's own README
-    Get-ChildItem -Path $SkillDir -Filter "*.md" | Where-Object { $_.Name -ne "README.md" } | ForEach-Object {
-        Copy-Item $_.FullName -Destination (Join-Path $TargetDir $_.Name) -Force
-        Write-Host "  Installed: $($_.Name) -> $TargetDir\"
+    # Copy all .md files recursively except the skill's own README
+    Get-ChildItem -Path $SkillDir -Filter "*.md" -Recurse | Where-Object { $_.Name -ne "README.md" } | ForEach-Object {
+        # Get relative path from SkillDir
+        $relPath = $_.FullName.Substring($SkillDir.Length + 1)
+        $targetFile = Join-Path $TargetDir $relPath
+        $targetDir = Split-Path $targetFile -Parent
+        if (-not (Test-Path $targetDir)) {
+            New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+        }
+        Copy-Item $_.FullName -Destination $targetFile -Force
+        Write-Host "  Installed: $relPath -> $targetDir\"
     }
 
     Write-Host "  Done: $SkillName"

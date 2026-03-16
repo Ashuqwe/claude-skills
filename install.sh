@@ -28,13 +28,15 @@ install_skill() {
 
   mkdir -p "$TARGET_DIR"
 
-  # Copy all .md files except the skill's own README
-  for f in "$skill_dir"/*.md; do
-    filename=$(basename "$f")
-    if [ "$filename" != "README.md" ]; then
-      cp "$f" "$TARGET_DIR/$filename"
-      echo "  Installed: $filename -> $TARGET_DIR/"
-    fi
+  # Copy all .md files recursively except the skill's own README
+  find "$skill_dir" -name "*.md" ! -name "README.md" | while read -r f; do
+    # Get relative path from skill_dir
+    rel_path="${f#$skill_dir/}"
+    # Create target directory if needed
+    target_file="$TARGET_DIR/$rel_path"
+    mkdir -p "$(dirname "$target_file")"
+    cp "$f" "$target_file"
+    echo "  Installed: $rel_path -> $(dirname "$target_file")/"
   done
 
   echo "  Done: $skill_name"

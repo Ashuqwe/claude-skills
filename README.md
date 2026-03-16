@@ -60,17 +60,28 @@ Restart Claude Code after installing. Skills are available as `/skill-name`.
 
 ## Available Skills
 
-### `/feature-story`
-**PM CV & Feature Documentation**
-
-Transforms raw product feature or experiment descriptions into:
-- ATS-optimized CV bullet points with tonality guidance
-- A structured PM Feature Brief for documentation and context recall
-- Interview prep angles and product learnings
-
-Built for Product Managers who want to turn messy notes and data into polished, recruiter-ready stories.
-
-[Full documentation](skills/feature-story/README.md)
+| Skill | Description | Category |
+|-------|-------------|----------|
+| [`/feature-story`](skills/feature-story/README.md) | PM CV & Feature Documentation - Transforms raw product feature descriptions into ATS-optimized CV content and PM documentation. | Product Management |
+| [`/academic-researcher`](skills/academic-researcher/academic-researcher.md) | Academic research assistant for literature reviews, paper analysis, and scholarly writing. | Research |
+| [`/code-reviewer`](skills/code-reviewer/code-reviewer.md) | Thorough code review with focus on security, performance, and best practices. | Development |
+| [`/content-creator`](skills/content-creator/content-creator.md) | Creates engaging content for blogs, social media, and marketing materials with audience focus. | Writing |
+| [`/data-analyst`](skills/data-analyst/data-analyst.md) | SQL, pandas, and statistical analysis expertise for data exploration and insights. | Data |
+| [`/debugger`](skills/debugger/debugger.md) | Systematic debugging and root cause analysis for identifying and fixing issues. | Development |
+| [`/decision-helper`](skills/decision-helper/decision-helper.md) | Structured decision-making frameworks for evaluating options and making informed choices. | Productivity |
+| [`/deep-research-awesome`](skills/deep-research-awesome/deep-research-awesome.md) | Comprehensive research assistant that synthesizes information from multiple sources with citations. | Research |
+| [`/editor`](skills/editor/editor.md) | Professional editing and proofreading for clarity, grammar, style, and tone. | Writing |
+| [`/email-drafter`](skills/email-drafter/email-drafter.md) | Professional email composition for business communication across various scenarios. | Productivity |
+| [`/fact-checker`](skills/fact-checker/fact-checker.md) | Systematic fact verification and misinformation identification using credible sources. | Research |
+| [`/fullstack-developer`](skills/fullstack-developer/fullstack-developer.md) | Modern web development expertise covering React, Node.js, databases, and deployment. | Development |
+| [`/meeting-notes`](skills/meeting-notes/meeting-notes.md) | Structured meeting summaries with action items, decisions, and key takeaways. | Productivity |
+| [`/project-planner`](skills/project-planner/project-planner.md) | Breaks down complex projects into actionable tasks with timelines and dependencies. | Planning |
+| [`/python-expert`](skills/python-expert/python-expert.md) | Senior Python developer expertise for writing clean, efficient, and maintainable code. | Development |
+| [`/sprint-planner`](skills/sprint-planner/sprint-planner.md) | Agile sprint planning with story estimation, capacity planning, and backlog refinement. | Planning |
+| [`/strategy-advisor`](skills/strategy-advisor/strategy-advisor.md) | High-level strategic thinking and business decision guidance for organizations. | Strategy |
+| [`/technical-writer`](skills/technical-writer/technical-writer.md) | Creates clear documentation, API references, guides, and technical content. | Writing |
+| [`/ux-designer`](skills/ux-designer/ux-designer.md) | Expert UX design assistance for user research, wireframing, prototyping, and testing. | Design |
+| [`/visualization-expert`](skills/visualization-expert/visualization-expert.md) | Chart selection and data visualization guidance for effective data communication. | Data |
 
 ---
 
@@ -81,12 +92,56 @@ claude-skills/
 ├── README.md               # This file
 ├── install.sh              # Installer for macOS / Linux
 ├── install.ps1             # Installer for Windows (PowerShell)
+├── .gitignore              # Git ignore rules
 └── skills/
-    └── feature-story/
-        ├── README.md           # Skill documentation
-        ├── feature-story.md    # Main skill (the /command)
-        ├── feature-story-guide.md  # Quick reference guide
-        └── pm-story-keywords.md    # ATS keyword bank (auto-updated)
+    ├── feature-story/
+    │   ├── README.md           # Skill documentation
+    │   ├── feature-story.md    # Main skill (the /command)
+    │   ├── feature-story-guide.md  # Quick reference guide
+    │   └── pm-story-keywords.md    # ATS keyword bank (auto-updated)
+    ├── academic-researcher/
+    │   └── academic-researcher.md
+    ├── code-reviewer/
+    │   ├── code-reviewer.md
+    │   ├── AGENTS.md
+    │   └── rules/
+    ├── content-creator/
+    │   └── content-creator.md
+    ├── data-analyst/
+    │   └── data-analyst.md
+    ├── debugger/
+    │   └── debugger.md
+    ├── decision-helper/
+    │   └── decision-helper.md
+    ├── deep-research-awesome/
+    │   └── deep-research-awesome.md
+    ├── editor/
+    │   └── editor.md
+    ├── email-drafter/
+    │   └── email-drafter.md
+    ├── fact-checker/
+    │   └── fact-checker.md
+    ├── fullstack-developer/
+    │   └── fullstack-developer.md
+    ├── meeting-notes/
+    │   └── meeting-notes.md
+    ├── project-planner/
+    │   └── project-planner.md
+    ├── python-expert/
+    │   ├── python-expert.md
+    │   └── AGENTS.md
+    ├── sprint-planner/
+    │   └── sprint-planner.md
+    ├── strategy-advisor/
+    │   └── strategy-advisor.md
+    ├── technical-writer/
+    │   └── technical-writer.md
+    ├── ux-designer/
+    │   ├── ux-designer.md
+    │   ├── AGENTS.md
+    │   └── rules/
+    └── visualization-expert/
+        └── visualization-expert.md
 ```
 
 ---
