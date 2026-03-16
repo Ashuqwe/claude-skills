@@ -93,6 +93,9 @@ claude-skills/
 ├── install.sh              # Installer for macOS / Linux
 ├── install.ps1             # Installer for Windows (PowerShell)
 ├── .gitignore              # Git ignore rules
+├── skill-template.md       # Comprehensive skill creation guide
+├── skill-template-prompt.md # Minimal prompt version for quick use
+├── skill-template-example.md # Filled example for reference
 └── skills/
     ├── feature-story/
     │   ├── README.md           # Skill documentation
@@ -148,6 +151,21 @@ claude-skills/
 
 ## Adding a New Skill
 
+### Using Templates (Recommended)
+Use the provided templates to create consistent, high-quality skills:
+
+1. **Review templates**:
+   - `skill-template.md` - Comprehensive guide with explanations
+   - `skill-template-prompt.md` - Minimal version for quick use
+   - `skill-template-example.md` - Filled example for reference
+
+2. **Create skill folder**: `skills/your-skill-name/`
+3. **Create skill file**: Copy template, fill placeholders, save as `your-skill-name.md`
+4. **Add README.md** (optional but recommended): Document how the skill works
+5. **Test installation**: `./install.sh your-skill-name` (macOS/Linux) or `.\install.ps1 your-skill-name` (Windows)
+6. **Add to Available Skills**: Update the table above with your new skill
+
+### Manual Creation
 1. Create a folder under `skills/your-skill-name/`
 2. Add your skill as `your-skill-name.md` (this becomes the `/command`)
 3. Add a `README.md` documenting how the skill works
